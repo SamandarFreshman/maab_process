@@ -1,0 +1,1 @@
+select mov_title, mov_year from movie;

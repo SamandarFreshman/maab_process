@@ -1,0 +1,155 @@
+--create database soccer
+--use soccer
+--go
+--create table soccer_country(country_id int primary key, country_abbr varchar(4),country_name varchar(40))
+--create table soccer_city(city_id int primary key, city varchar(25), country_id int)
+--create table soccer_venue(venue_id int primary key, venue_name varchar(30),	city_id int, aud_capacity int)
+--create table soccer_team(team_id int primary key, team_group char, match_played int,won int, draw int, lost int, goal_for int, goal_against int, goal_diff int, points int, group_position int)
+--create table playing_position(position_id varchar(2) primary key,position_desc varchar(15))
+--create table player_mast(player_id int primary key, team_id int, jersay_no int, player_name varchar(40), posi_to_play varchar(2),dt_of_bir datetime, age int, playing_club varchar(40))
+--create table referee_mast(referee_id int primary key,referee_name varchar(40), country_id int)
+--create table match_mast(match_no int primary key, play_stage char, play_date datetime, results varchar(5), desided_by char, goal_score varchar(5), venue_id int, referee_id int, audence int,plr_of_match int, stop1_sec int, stop2_sec int)
+--create table coach_mast(coach_id int primary key, coach_name varchar(40))
+--create table asst_referee_mast(asst_ref_id int, asst_ref_name varchar(40),country_id int)
+--alter table asst_referee_mast
+--alter column asst_ref_id int not null
+--alter table [dbo].[asst_referee_mast]
+--	add constraint PK_asst_referee_mast_asst_ref_id PRIMARY KEY clustered (asst_ref_id)
+--create table match_details(match_no int, play_stage varchar(21),team_id int, win_loos varchar(21), decided_by varchar(21), goal_score int,penalty_score int, ass_ref int, player_gk int)
+--create table goal_details(goal_id int primary key, match_no int, player_id int, team_id int, goal_time int, goal_type char, play_stage char, goal_schedule varchar(2), goal_half int)
+--create table penalty_shootouts(kick_id int primary key,match_no int, team_id int, player_id int, score_goal varchar(21), kick_no int)
+--create table player_booked(match_no int, team_id int, player_id int, booking_time varchar(240),sent_off char, play_schedule varchar(2), play_half int)
+--create table player_in_out(match_no int, team_id int, player_id int, in_out char, time_in_out int, play_schedule char, play_half int)
+--create table match_captain(match_no int, team_id int, player_captain int)
+--create table team_coaches(team_id int,coach_id int)
+--create table penalty_gk(match_no int, team_id int,player_gk int)
+
+--bulk insert soccer_country
+--from 'C:\Users\Samandar''s PC\OneDrive\Desktop\soccer\soccer_country.txt'
+--with (
+--	firstrow=3,
+--	fieldterminator='\t',
+--	rowterminator='\n'
+--)
+
+--bulk insert soccer_city
+--from 'C:\Users\Samandar''s PC\OneDrive\Desktop\soccer\soccer_city.txt'
+--with (
+--	firstrow=3,
+--	fieldterminator='\t',
+--	rowterminator='\n'
+--)
+--bulk insert soccer_venue
+--from 'C:\Users\Samandar''s PC\OneDrive\Desktop\soccer\soccer_venue.txt'
+--with (
+--	firstrow=3,
+--	fieldterminator='\t',
+--	rowterminator='\n'
+--)
+--bulk insert soccer_team
+--from 'C:\Users\Samandar''s PC\OneDrive\Desktop\soccer\soccer_team.txt'
+--with (
+--	firstrow=3,
+--	fieldterminator='\t',
+--	rowterminator='\n'
+--)
+--bulk insert playing_position
+--from 'C:\Users\Samandar''s PC\OneDrive\Desktop\soccer\playing_position.txt'
+--with (
+--	firstrow=3,
+--	fieldterminator='\t',
+--	rowterminator='\n'
+--)
+--bulk insert player_mast
+--from 'C:\Users\Samandar''s PC\OneDrive\Desktop\soccer\player_mast.txt'
+--with (
+--	firstrow=3,
+--	fieldterminator='\t',
+--	rowterminator='\n'
+--)
+--bulk insert referee_mast
+--from 'C:\Users\Samandar''s PC\OneDrive\Desktop\soccer\referee_mast.txt'
+--with (
+--	firstrow=3,
+--	fieldterminator='\t',
+--	rowterminator='\n'
+--)
+--bulk insert match_mast
+--from 'C:\Users\Samandar''s PC\OneDrive\Desktop\soccer\match_mast.txt'
+--with (
+--	firstrow=3,
+--	fieldterminator='\t',
+--	rowterminator='\n'
+--)
+--bulk insert coach_mast
+--from 'C:\Users\Samandar''s PC\OneDrive\Desktop\soccer\coach_mast.txt'
+--with (
+--	firstrow=3,
+--	fieldterminator='\t',
+--	rowterminator='\n'
+--)
+--bulk insert asst_referee_mast
+--from 'C:\Users\Samandar''s PC\OneDrive\Desktop\soccer\asst_referee_mast.txt'
+--with (
+--	firstrow=3,
+--	fieldterminator='\t',
+--	rowterminator='\n'
+--)
+--bulk insert match_details
+--from 'C:\Users\Samandar''s PC\OneDrive\Desktop\soccer\match_details.txt'
+--with (
+--	firstrow=3,
+--	fieldterminator='\t',
+--	rowterminator='\n'
+--)
+--bulk insert goal_details
+--from 'C:\Users\Samandar''s PC\OneDrive\Desktop\soccer\goal_details.txt'
+--with (
+--	firstrow=3,
+--	fieldterminator='\t',
+--	rowterminator='\n'
+--)
+--bulk insert penalty_shootouts
+--from 'C:\Users\Samandar''s PC\OneDrive\Desktop\soccer\penalty_shootouts.txt'
+--with (
+--	firstrow=3,
+--	fieldterminator='\t',
+--	rowterminator='\n'
+--)
+--bulk insert player_booked
+--from 'C:\Users\Samandar''s PC\OneDrive\Desktop\soccer\player_booked.txt'
+--with (
+--	firstrow=3,
+--	fieldterminator='\t',
+--	rowterminator='\n'
+--)
+--bulk insert player_in_out
+--from 'C:\Users\Samandar''s PC\OneDrive\Desktop\soccer\player_in_out.txt'
+--with (
+--	firstrow=3,
+--	fieldterminator='\t',
+--	rowterminator='\n'
+--)
+--bulk insert match_captain
+--from 'C:\Users\Samandar''s PC\OneDrive\Desktop\soccer\match_captain.txt'
+--with (
+--	firstrow=3,
+--	fieldterminator='\t',
+--	rowterminator='\n'
+--)
+
+--bulk insert team_coaches
+--from 'C:\Users\Samandar''s PC\OneDrive\Desktop\soccer\team_coaches.txt'
+--with (
+--	firstrow=3,
+--	fieldterminator='\t',
+--	rowterminator='\n'
+--)
+--bulk insert penalty_gk
+--from 'C:\Users\Samandar''s PC\OneDrive\Desktop\soccer\penalty_gk.txt'
+--with (
+--	firstrow=3,
+--	fieldterminator='\t',
+--	rowterminator='\n'
+--)
+
